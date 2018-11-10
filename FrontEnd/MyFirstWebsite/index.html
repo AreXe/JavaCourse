@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="main.css">
+	<title>Strona główna</title>
+</head>
+
+<script language="JavaScript" type="text/javascript">
+function zegar(){
+    d = new Date();
+    var h=d.getHours(),m=d.getMinutes(),s=d.getSeconds(),r;
+    r=(h<10?"0"+h:h)+":"+(m<10?"0"+m:m)+":"+(s<10?"0"+s:s);
+    
+    document.getElementById('czas').innerHTML=r;
+    setTimeout("zegar()", 1000);
+}
+</script>
+
+<body>
+	<div class="main-container">
+	<nav class="site-menu">
+		<ul class="site-nav">
+		<li class="site-nav-item">
+		<a href="index.html">Strona główna</a>
+		</li>
+		<li class="site-nav-item">
+		<a href="element1.html">Element1</a>
+		</li>
+		<li class="site-nav-item">
+		<a href="element2.html">Element2</a>
+		</li>
+		<li class="site-nav-item">
+		<a href="https://github.com/AreXe">Mój GitHub</a>
+		</li>
+		</ul>
+	</nav>
+	<div class="main-content">
+	<article>
+		<header>
+			<h1>Człowiek większość swojego życia spędza w mieszkaniu, dlatego też stanowi ono główny wyznacznik ludzkiego bytu. Mieszkanie służy zaspokojeniu podstawowych funkcji biologicznych i jest miejscem regeneracji.</h1>
+			<p>Napisał: AreXe</p>
+		</header>
+		<p>Rynek nieruchomości mieszkaniowych uzależniony jest od wpływu wielu czynników, zarówno ekonomicznych jak i społecznych. Zbadanie tych zależności może pomóc w planowaniu przyszłych inwestycji. W tym celu wykorzystano program STATISTICA, który za sprawą narzędzi analizy data mining pozwala utworzyć optymalny model prognostyczny.</p>
+		<figure>
+		<img src="images/MARS.PNG" alt="Prognozowanie liczby mieszkań metodą MARS">
+		<figcaption>Prognozowanie metodą MARS</figcaption>
+		<p>Tak dokładny wynik jest spowodowany predyktorami użytymi do budowy tego modelu, które stanowią sumę zmiennej zależnej v3. Obliczony model MARS1 nie może być uznany za prawidłowy, ponieważ nie spełnia on podstawowego warunku równania regresji. Należy dokonać obliczeń kolejnego modelu metodą MARSplines ze zredukowaną ilością zmiennych niezależnych. <q>Błąd MAPE dla tego modelu wynosi 2,38387%</q> - dodaje autor.
+		</p> 
+		</figure>
+	</article>
+	<form>
+		<div>
+		<label for="nickname">Twój nick:</label>
+		</div>
+		<div>
+		<input type="text" id="nickname" name="nickname">
+		</div>
+		<div>
+		<label for="user-email">Twój e-mail:</label>
+		</div>
+		<div>
+		<input type="email" id="user-email" name="user-email" required>
+		</div>
+		<div>
+		<label for="content">Treść:</label>
+		</div>
+		<div>
+		<textarea rows="10" cols="50" id="content"
+		name="content" placeholder="Zapodaj komentarz :)"></textarea>
+		</div>
+		<div>
+		<input type="submit" value="dodaj">
+		</div>
+	</form>
+	</div>
+	<aside class="sidebar">
+	<div>Wstaw tu coś!</div>
+	</aside>
+	</div>
+</body>
+</html>
