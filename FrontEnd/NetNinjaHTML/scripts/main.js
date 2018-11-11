@@ -1,0 +1,1 @@
+alert("Pisz tylko pozytywne opinie!")
