@@ -21,7 +21,7 @@ public class H2Configuration {
     }
 
 
-    private static Connection getDBConnection() throws ClassNotFoundException, SQLException {
+    public static Connection getDBConnection() throws ClassNotFoundException, SQLException {
 
         Connection connection = null;
 
