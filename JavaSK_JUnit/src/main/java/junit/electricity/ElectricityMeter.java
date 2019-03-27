@@ -58,4 +58,14 @@ public class ElectricityMeter {
     void setElectricityTariffEndHour(int electricityTariffEndHour) {
         this.electricityTariffEndHour = electricityTariffEndHour;
     }
+
+    public void reset() {
+        kwh = 0;
+        centsForKwh = 0;
+        tariffOn = false;
+        kwhTariff = 0;
+        centsForKwhTariff = 0;
+        electricityTariffStartHour = 0;
+        electricityTariffEndHour = 0;
+    }
 }

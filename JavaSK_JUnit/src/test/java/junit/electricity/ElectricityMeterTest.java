@@ -1,16 +1,27 @@
 package junit.electricity;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.*;
 
 import static org.junit.Assert.*;
 
 public class ElectricityMeterTest {
 
+    private static ElectricityMeter electricityMeter;
+
+    @BeforeClass
+    public static void init() {
+        ElectricityMeterTest.electricityMeter = new ElectricityMeter();
+    }
+
+    @Before
+    public void setUp() {
+        //assure to start deterministic environment
+        electricityMeter.reset();
+    }
+
     @Test
     public void addKwh_newMeter_properAddition() {
-        //given
-        ElectricityMeter electricityMeter = new ElectricityMeter();
+        //given = setUp()
         //when
         electricityMeter.addKwh(1);
         //then
@@ -19,8 +30,7 @@ public class ElectricityMeterTest {
 
     @Test
     public void forNewMeterAddingFewKwhShouldReturnProperValue() {
-        //given
-        ElectricityMeter electricityMeter = new ElectricityMeter();
+        //given = setUp()
         //when
         electricityMeter.addKwh(1);
         electricityMeter.addKwh(5);
@@ -31,11 +41,15 @@ public class ElectricityMeterTest {
 
     @Test(expected = ArithmeticException.class)
     public void givenNoTariffPriceShouldReturnArithmeticExceptionForGettingHowMoreExpensiveNormalIs() {
-        //given
-        ElectricityMeter electricityMeter = new ElectricityMeter();
+        //given = setUp()
         electricityMeter.setCentsForKwh(90);
         //when
         electricityMeter.getHowMoreExpensiveNormalIs();
         //then -> expected exception
+    }
+
+    @AfterClass
+    public static void release(){
+        //release connections...
     }
 }
